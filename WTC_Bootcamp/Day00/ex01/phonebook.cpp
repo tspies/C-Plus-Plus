@@ -4,9 +4,10 @@
 
 int main(void)
 {
-    std::string command;
+    std::string route;
     std::cout << "\nWELCOME TO:\n\n";
  
+ // Graphic Name
 std::cout << " _____        _         _                   _        _____   _                              _                     _  \n";  
 std::cout << "|_   _|      (_)       | |                 ( )      | ___ \\ | |                            | |                   | |  \n"; 
 std::cout << "  | |   _ __  _   ___  | |_   _   _  _ __  |/  ___  | |_/ / | |__     ___    _ __     ___  | |__    ___    ___   | | __\n";
@@ -21,13 +22,17 @@ std::cout << "                              |___/  \n\n";
     std::cout << "'SEARCH'- To search for an existing contact\n";
     std::cout << "'EXIT'- To quit the program\n";
  
+ // Switchboard for commands entered, will run till 'EXIT' command
     while (1)
     {
-        std::getline (std::cin, command);
-        if (command == "SEARCH" || command == "ADD"){
+        std::getline (std::cin, route);
+        if (route == "ADD"){
             std::cout << "GOOD LOOP\n";
         }
-        else if(command == "EXIT")
+        else if (route == "SEARCH"){
+            std::cout << "SEARCHING\n";
+        }
+        else if(route == "EXIT")
         {
             std::cout << "Good Bye\n";
             break;
@@ -37,3 +42,7 @@ std::cout << "                              |___/  \n\n";
     }
     return 0;
 }
+// Things to do:
+// 1. work out how to make an external class
+// 2. compile with .hpp files in make file
+// 3. work with external class members and variables

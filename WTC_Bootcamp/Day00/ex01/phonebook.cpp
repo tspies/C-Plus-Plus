@@ -9,21 +9,17 @@ int main(void)
     std::cout << "\nWELCOME TO:\n\n";
  
  // Graphic Name
-std::cout << " _____        _         _                   _        _____   _                              _                     _  \n";  
-std::cout << "|_   _|      (_)       | |                 ( )      | ___ \\ | |                            | |                   | |  \n"; 
-std::cout << "  | |   _ __  _   ___  | |_   _   _  _ __  |/  ___  | |_/ / | |__     ___    _ __     ___  | |__    ___    ___   | | __\n";
-std::cout << "  | |  |  __|| | / __| | __| | | | ||  _  \\  / __|  |  __/  |  _ \\   / _ \\  |  _ \\   / _ \\ |  _ \\  / _ \\  / _ \\  | |/ /\n";
-std::cout << "  | |  | |   | | \\__ \\ | |_  | |_| || | | |  \\__ \\  | |     | | | | | (_) | | | | | |  __/ | |_)| | (_) || (_) | |   < \n";
-std::cout << "  \\_/  |_|   |_| |___/  \\__|  \\__  ||_| |_|  |___/  \\_|     |_| |_|  \\___/  |_| |_|  \\___| |____/  \\___/  \\___/  |_|\\_\\\n";
-std::cout << "                               __/ | \n";                                                                           
-std::cout << "                              |___/  \n\n";                                                                          
+	std::cout << " _____        _         _                   _        _____   _                              _                     _  \n";  
+	std::cout << "|_   _|      (_)       | |                 ( )      | ___ \\ | |                            | |                   | |  \n"; 
+	std::cout << "  | |   _ __  _   ___  | |_   _   _  _ __  |/  ___  | |_/ / | |__     ___    _ __     ___  | |__    ___    ___   | | __\n";
+	std::cout << "  | |  |  __|| | / __| | __| | | | ||  _  \\  / __|  |  __/  |  _ \\   / _ \\  |  _ \\   / _ \\ |  _ \\  / _ \\  / _ \\  | |/ /\n";
+	std::cout << "  | |  | |   | | \\__ \\ | |_  | |_| || | | |  \\__ \\  | |     | | | | | (_) | | | | | |  __/ | |_)| | (_) || (_) | |   < \n";
+	std::cout << "  \\_/  |_|   |_| |___/  \\__|  \\__  ||_| |_|  |___/  \\_|     |_| |_|  \\___/  |_| |_|  \\___| |____/  \\___/  \\___/  |_|\\_\\\n";
+	std::cout << "                               __/ | \n";                                                                           
+	std::cout << "                              |___/  \n\n";                                                                          
 
-    std::cout << "Please enter one of the following commands:\n";                                                        
-    std::cout << "'ADD'- For a new contact\n";
-    std::cout << "'SEARCH'- To search for an existing contact\n";
-    std::cout << "'EXIT'- To quit the program\n";
- 
- // Singular obj set-up for now
+ // Object array + initial rules
+ printRules();
  Contact contactArr[9];
  int index = 0;
 
@@ -66,7 +62,7 @@ void printRules(void)
     std::cout << "'SEARCH'- To search for an existing contact\n";
     std::cout << "'EXIT'- To quit the program\n";
 }
-// Things to do:
-// 1. work out how to make an external class
-// 2. compile with .hpp files in make file
-// 3. work with external class members and variables
+//Things to do:
+//1. Refine 'SEARCH' command
+//2. Test array size max
+//3. Add filters/restrictions for name and number input fileds

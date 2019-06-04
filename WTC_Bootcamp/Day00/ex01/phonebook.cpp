@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cctype>
 #include <string>
+#include "Contact.hpp"
 
 int main(void)
 {
@@ -22,25 +23,48 @@ std::cout << "                              |___/  \n\n";
     std::cout << "'SEARCH'- To search for an existing contact\n";
     std::cout << "'EXIT'- To quit the program\n";
  
+ // Singular obj set-up for now
+ Contact contactArr[9];
+ int index = 0;
+
  // Switchboard for commands entered, will run till 'EXIT' command
     while (1)
     {
         std::getline (std::cin, route);
         if (route == "ADD"){
-            std::cout << "GOOD LOOP\n";
+			if (index < 9)
+			{
+            	contactArr[index].addContact();
+				index++;
+			}
+			else
+				std::cout << "Number Of Contacts Reached!\n";
         }
         else if (route == "SEARCH"){
-            std::cout << "SEARCHING\n";
+			int dex;
+			std::cout << "Enter index you would like to search:" << std::endl;
+			std::cin >> dex;
+			contactArr[dex].showDetails();
         }
         else if(route == "EXIT")
         {
             std::cout << "Good Bye\n";
             break;
         }
+		else if (route == "c")
+			printRules();
         else
             std::cout << "Invalid command please try again\n";
     }
     return 0;
+}
+
+void printRules(void)
+{
+	std::cout << "Please enter one of the following commands:\n";                                                        
+    std::cout << "'ADD'- For a new contact\n";
+    std::cout << "'SEARCH'- To search for an existing contact\n";
+    std::cout << "'EXIT'- To quit the program\n";
 }
 // Things to do:
 // 1. work out how to make an external class

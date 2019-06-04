@@ -2,7 +2,9 @@
 NAME     := phonebook
 
 # Sources and objects.
-SRCS     := phonebook.cpp
+SRCS     := phonebook.cpp \
+				Contact.cpp
+
 OBJS     := $(SRCS:.cpp=.o)
 
 CC     := clang++

@@ -89,10 +89,11 @@ void Contact::printContact(void)
 	printFieldSimple(favourite_meal, "Favourite Meal");
 	printFieldSimple(underwear_color, "Underwear Color");
 	printFieldSimple(darkest_secret, "Darkest Secret");
+	std::cout << "Waiting for commands... (Type 'c' to show commands)\n";
 }
 void Contact::printFieldSimple(std::string field, std::string message)
 {
-	std::cout << message << ":\n" << field;
+	std::cout << message << ": " << field << std::endl;
 }
 
 int Contact::checkValid(void)

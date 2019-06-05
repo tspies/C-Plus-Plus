@@ -42,13 +42,16 @@ int main(void)
 			        contactArr[dex].showPhonebook();
                 std::cout << "Input the Index of the contact you would like to view:\n";
                 std::getline (std::cin, route);
-                if (contactArr[std::atoi(route.c_str())].checkValid() && isdigit(std::atoi(route.c_str())))
+                if (contactArr[std::atoi(route.c_str())].checkValid())
                     contactArr[std::atoi(route.c_str())].printContact();
                 else
                     std::cout << "Invalid index, returning to main command menue (Type 'c' to show commands)\n";
             }
             else
-            std::cout << "No Conatcts in Phonebook\n";
+            {
+                std::cout << "No Conatcts in Phonebook\n";
+                std::cout << "Waiting for commands... (Type 'c' to show commands)\n";
+            }
         }
         else if(route == "EXIT")
         {

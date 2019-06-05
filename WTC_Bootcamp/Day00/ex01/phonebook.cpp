@@ -6,9 +6,11 @@
 int main(void)
 {
     std::string route;
+    Contact contactArr[9];
+    int index = 0;
+
+// Graphic name
     std::cout << "\nWELCOME TO:\n\n";
- 
- // Graphic Name
 	std::cout << " _____        _         _                   _        _____   _                              _                     _  \n";  
 	std::cout << "|_   _|      (_)       | |                 ( )      | ___ \\ | |                            | |                   | |  \n"; 
 	std::cout << "  | |   _ __  _   ___  | |_   _   _  _ __  |/  ___  | |_/ / | |__     ___    _ __     ___  | |__    ___    ___   | | __\n";
@@ -18,29 +20,35 @@ int main(void)
 	std::cout << "                               __/ | \n";                                                                           
 	std::cout << "                              |___/  \n\n";                                                                          
 
- // Object array + initial rules
- printRules();
- Contact contactArr[9];
- int index = 0;
-
  // Switchboard for commands entered, will run till 'EXIT' command
+    printRules();
     while (1)
     {
         std::getline (std::cin, route);
         if (route == "ADD"){
-			if (index < 9)
+			if (index < 8)
 			{
-            	contactArr[index].addContact();
+            	contactArr[index].addContact(index);
 				index++;
 			}
 			else
-				std::cout << "Number Of Contacts Reached!\n";
+				std::cout << "Maximum Number Of Contacts Reached!\n";
         }
         else if (route == "SEARCH"){
-			int dex;
-			std::cout << "Enter index you would like to search:" << std::endl;
-			std::cin >> dex;
-			contactArr[dex].showDetails();
+            if (index > 0)
+            {
+                printPhonebookHeader();
+                for (int dex = 0; dex < 8; dex++)
+			        contactArr[dex].showPhonebook();
+                std::cout << "Input the Index of the contact you would like to view:\n";
+                std::getline (std::cin, route);
+                if (contactArr[std::atoi(route.c_str())].checkValid() && isdigit(std::atoi(route.c_str())))
+                    contactArr[std::atoi(route.c_str())].printContact();
+                else
+                    std::cout << "Invalid index, returning to main command menue (Type 'c' to show commands)\n";
+            }
+            else
+            std::cout << "No Conatcts in Phonebook\n";
         }
         else if(route == "EXIT")
         {
@@ -61,6 +69,12 @@ void printRules(void)
     std::cout << "'ADD'- For a new contact\n";
     std::cout << "'SEARCH'- To search for an existing contact\n";
     std::cout << "'EXIT'- To quit the program\n";
+}
+void printPhonebookHeader(void)
+{
+	std::cout << "\n";
+	std::cout << "|  " << "index" << "   |first name|last name | nickname |\n";
+	std::cout << "|  " << "        |          |          |          |\n";
 }
 //Things to do:
 //1. Refine 'SEARCH' command

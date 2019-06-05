@@ -1,36 +1,35 @@
 #include <iostream>
 #include <cctype>
 
-void capitalize(int ac, char **av)
+void capitalize(char *av)
 {
-    int x = 1;
+    int y = -1;
+    char upped;
 
-    while (x < ac)
-    {
-        int len = strlen(av[x]);
-        for (int y = 0; y < len; y++)
-        {
-            if (isalpha(av[x][y]))
-                std::cout << (char)toupper(av[x][y]);
+        while (av[++y])
+        {   
+            if (av[y] >= 'a' && av[y] <= 'z')
+                upped = (char)toupper(av[y]);
             else
-                std::cout << av[x][y];
+               upped = av[y];
+            std::cout << upped;
         }
-        x++;
-    }
-    std::cout << std::endl;
 };
 
 int main(int ac, char **av)
 {
-    char *x;
-    x = *av;
-    if (ac > 1)
-    {
-        capitalize(ac, av);
-    }
-    else
+    int x = 0;
+    if (ac == 1)
     {
         std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
+        return 0;
+    
     }
+    while (av[++x])
+    {
+        capitalize(av[x]);
+    }
+    std::cout << std::endl;
     return 0;
 }
+

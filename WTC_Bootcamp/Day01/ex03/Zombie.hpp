@@ -4,9 +4,11 @@
 	class Zombie 
 	{
 		public:
-		Zombie(std::string, std::string);
-		~Zombie();
-		std::string announce(void);
+		Zombie(void);
+		~Zombie(void);
+		void announceZom(void);
+		void setName(std::string name);
+		void setType(std::string type);
 
 		private:
 		std::string type;

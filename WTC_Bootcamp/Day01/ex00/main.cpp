@@ -18,6 +18,7 @@ void ponyHeap(void)
     std::cout << "     " << Blossom->titleRecall() << " is a " << Blossom->getSize() << " Pony\n";
     std::cout << "     " << Blossom->titleRecall() << " is " << Blossom->colourMe() << " and" << Blossom->iRUnicorn() << std::endl;
     std::cout << std::endl;
+    // Heap object has to be manually deleted to free heap memory
     delete Blossom;
 }
 

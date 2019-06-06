@@ -1,5 +1,5 @@
 #ifndef ZOMBIEEVENT_HPP
- #define ZOMBIEEVENY_HPP
+ #define ZOMBIEEVENT_HPP
  #include "Zombie.hpp"
 	class ZombieEvent
 	{

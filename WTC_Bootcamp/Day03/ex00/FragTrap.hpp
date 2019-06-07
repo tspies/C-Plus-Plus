@@ -20,17 +20,19 @@
 
 
         public:
+            FragTrap();
             FragTrap(std::string name);
             ~FragTrap();
             FragTrap(const FragTrap &frag);
             std::string fetchName(void);
-            void rangedAttack(std::string const name, FragTrap target);
-            void meleeAttack(std::string const name, FragTrap target);
+            void rangedAttack(std::string const &target);
+            void meleeAttack(std::string const &target);
             void takeDamage(unsigned int amount);
             void beRepaired(unsigned int amount);
-            void headButt(std::string const nam, FragTrap target);
-            void pulseLazer(std::string const nam, FragTrap target);
-            void insultToMother(std::string const nam, FragTrap target);
-            void vaulhunter_dot_exe(std::string const name, FragTrap target);
+            void headButt(std::string const &target);
+            void pulseLazer(std::string const &target);
+            void insultToMother(std::string const &target);
+            void vaulhunter_dot_exe(std::string const &target);
+            FragTrap &operator=(const FragTrap &Frag);
     };
 #endif

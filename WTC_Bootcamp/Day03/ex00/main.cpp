@@ -3,9 +3,9 @@
 
 int main()
 {
-    FragTrap Bot1;
-    FragTrap Bot2;
+    FragTrap Bot1("Bob");
+    FragTrap Bot2("Tim");
 
-    Bot1.rangedAttack(Bot1.fetchName(), Bot2);
+    Bot1.rangedAttack(Bot2.fetchName());
     return 0;
 }

@@ -14,6 +14,8 @@
         this->_name = name;
         this->_meleeAttackDamage= 30;
         this->_rangedAttackDamage = 20;
+        this->_headButtDamage;
+        this->_pulseLazerdamage
 
     }
     FragTrap::~FragTrap()
@@ -26,7 +28,7 @@
     }
 //-------------------------------------------------------------------
 //Attack functions
-    void FragTrap::rangedAttack(std::string const name, FragTrap target)
+    void FragTrap::rangedAttack(std::string const &target)
     {
         if (this->_energyPoints - 10 < 0)
         {

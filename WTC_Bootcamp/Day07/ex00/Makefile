@@ -1,6 +1,6 @@
 NAME     := templates
 
-SRCS     := main.cpp 
+SRCS     := whatever.cpp 
 
 OBJS     := $(SRCS:.cpp=.o)
 

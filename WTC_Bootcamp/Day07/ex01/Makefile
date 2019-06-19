@@ -5,7 +5,7 @@ SRCS     := iter.cpp
 OBJS     := $(SRCS:.cpp=.o)
 
 CC     := clang++
-FLAGS := -Wall -Werror -Wextra
+FLAGS := -std=c++98 -Wall -Werror -Wextra
 HDD := 
 
 all: $(NAME)
